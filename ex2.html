@@ -10,25 +10,54 @@
     <input type="button" value="hi" onclick="alert('hi')">
     <input type="text" onchange="alert('changed')">
     <input type="text" onkeydown="alert('keydown')">
-    I'm so bored with my life!
+    
+    <p>I'm so bored with my life!</p>
+    
+    
     <input type="button" value="night" onclick="
-        document.querySelector('body').style.backgroundColor ='black';
-        document.querySelector('body').style.color ='white';
-    ">
-    <input type="button" value="day" onclick="
-        document.querySelector('body').style.backgroundColor ='white';
-        document.querySelector('body').style.color ='black';
-    ">
-    <input id="night_day" type="button" value="night" onclick="
-    if(document.querySelector('#night_day').value =='night'){
-        document.querySelector('body').style.backgroundColor ='black';
-        document.querySelector('body').style.color ='white';
-        document.querySelector('#night_day').value ='day'
+    var target =document.querySelector('body');
+    if(this.value =='night'){ 
+        target.style.backgroundColor ='black';
+        target.style.color ='white';
+        this.value ='day'
+        var alist = document.querySelectorAll('a');
+        var i=0;
+        while(i<alist.length){
+            console.log(alist[i]);
+            alist[i].style.color='powderblue';
+            i=i+1;
+        }
     }
     else{
-        document.querySelector('body').style.backgroundColor ='white';
-        document.querySelector('body').style.color ='black';
-        document.querySelector('#night_day').value ='night'
+        target.style.backgroundColor ='white';
+        target.style.color ='black';
+        this.value ='night'
+        var alist = document.querySelectorAll('a');
+        var i=0;
+        while(i<alist.length){
+            console.log(alist[i]);
+            alist[i].style.color='blue';
+            i=i+1;
+        }
+    }
+    ">
+    <ol>
+        <li><a href="ex2.html">HTML</a></li>
+        <li><a href="ex2.html">CSS</a></li>
+        <li><a href="ex2.html">JavaScript</a></li>
+    </ol>
+    Scorpion is the fifth studio album by Canadian rapper and singer Drake. It was released on June 29, 2018, by Cash Money Records, Republic Records, and Young Money Entertainment. Scorpion is a double album consisting of 25 tracks. Its first disc is primarily hip hop, while its second disc has been described as R&B and pop. It was executively produced by Drake himself, alongside frequent collaborator 40 and manager Oliver El-Khatib. Scorpion features guest appearances from Jay-Z and Ty Dolla Sign, as well as posthumous appearances from Michael Jackson and Static Major.
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body')
+    if(this.value =='night'){
+        target.style.backgroundColor ='black';
+        target.style.color ='white';
+        this.value ='day'
+    }
+    else{
+        target.style.backgroundColor ='white';
+        target.style.color ='black';
+        this.value ='night'
     }
     ">
 </body>
