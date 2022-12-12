@@ -5,6 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <script>
+        var Body = {
+            setColor:function(color){
+            document.querySelector('body').style.color=color;
+            },
+            setColorBackground:function(color){
+            document.querySelector('body').style.backgroundColor=color;
+            }
+        }
+        var Links = {
+            setColor:function(color){
+            var alist = document.querySelectorAll('a');
+                var i=0;
+                while(i<alist.length){
+                    alist[i].style.color=color;
+                    i=i+1;
+                }
+            }
+        }
+        function nightDayChanger(self){
+            var target =document.querySelector('body');
+            if(self.value =='night'){ 
+                Body.setColorBackground('black');
+                Body.setColor('white');
+                self.value ='day'
+                Links.setColor('powderblue');
+            }
+            else{
+                Body.setColorBackground('white');
+                Body.setColor('black');
+                self.value ='night'
+                Links.setColor('blue');
+            }
+        }
+    </script>
 </head>
 <body>
     <input type="button" value="hi" onclick="alert('hi')">
@@ -14,51 +49,13 @@
     <p>I'm so bored with my life!</p>
     
     
-    <input type="button" value="night" onclick="
-    var target =document.querySelector('body');
-    if(this.value =='night'){ 
-        target.style.backgroundColor ='black';
-        target.style.color ='white';
-        this.value ='day'
-        var alist = document.querySelectorAll('a');
-        var i=0;
-        while(i<alist.length){
-            console.log(alist[i]);
-            alist[i].style.color='powderblue';
-            i=i+1;
-        }
-    }
-    else{
-        target.style.backgroundColor ='white';
-        target.style.color ='black';
-        this.value ='night'
-        var alist = document.querySelectorAll('a');
-        var i=0;
-        while(i<alist.length){
-            console.log(alist[i]);
-            alist[i].style.color='blue';
-            i=i+1;
-        }
-    }
-    ">
+    <input type="button" value="night" onclick="nightDayChanger(this);">
     <ol>
         <li><a href="ex2.html">HTML</a></li>
         <li><a href="ex2.html">CSS</a></li>
         <li><a href="ex2.html">JavaScript</a></li>
     </ol>
     Scorpion is the fifth studio album by Canadian rapper and singer Drake. It was released on June 29, 2018, by Cash Money Records, Republic Records, and Young Money Entertainment. Scorpion is a double album consisting of 25 tracks. Its first disc is primarily hip hop, while its second disc has been described as R&B and pop. It was executively produced by Drake himself, alongside frequent collaborator 40 and manager Oliver El-Khatib. Scorpion features guest appearances from Jay-Z and Ty Dolla Sign, as well as posthumous appearances from Michael Jackson and Static Major.
-    <input type="button" value="night" onclick="
-    var target = document.querySelector('body')
-    if(this.value =='night'){
-        target.style.backgroundColor ='black';
-        target.style.color ='white';
-        this.value ='day'
-    }
-    else{
-        target.style.backgroundColor ='white';
-        target.style.color ='black';
-        this.value ='night'
-    }
-    ">
+    <input type="button" value="night" onclick="nightDayChanger(this);">
 </body>
 </html>
